@@ -1,0 +1,34 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "sling:resourceSuperType": "wcm-io/handler/link/components/page/redirect",
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "Page",
+    "extraClientlibs": [
+      "cq.common.wcm",
+      "cq.siteadmin.admin.properties"
+    ],
+    "mode": "edit",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/container",
+      "granite:class": "cq-dialog-content-page",
+      "items": {
+        "tabs": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/tabs",
+          "granite:rel": "cq-siteadmin-admin-properties-tabs",
+          "items": {
+            "link": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/include",
+              "path": "wcm-io-samples/core/components/global/include/linkRefNoTitleTab"
+            },
+            "redirectStatus": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/include",
+              "path": "wcm-io/handler/link/components/global/include/redirectStatus"
+            }
+          }
+        }
+      }
+    }
+  }
+}

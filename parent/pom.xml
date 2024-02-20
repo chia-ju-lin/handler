@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  wcm.io
+  %%
+  Copyright (C) 2014 wcm.io
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.maven</groupId>
+    <artifactId>io.wcm.maven.aem-global-parent</artifactId>
+    <version>2.1.12</version>
+    <relativePath />
+  </parent>
+
+  <groupId>io.wcm.samples</groupId>
+  <artifactId>io.wcm.samples.parent</artifactId>
+  <version>1.4.3-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Samples</name>
+  <description>Sample projects and applications to demonstrate and test wcm.io features.</description>
+
+  <properties>
+
+    <!-- AEM instance parameters -->
+    <sling.url>http://localhost:4502</sling.url>
+    <sling.publish.url>http://localhost:4503</sling.publish.url>
+
+    <!-- Versions -->
+    <java.version>11</java.version>
+    <mockito.version>5.8.0</mockito.version>
+
+    <!-- Enable reproducible builds -->
+    <project.build.outputTimestamp>2023-04-20T09:30:58Z</project.build.outputTimestamp>
+
+  </properties>
+
+  <dependencies>
+
+    <!-- Nullability annotations -->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- OSGi bundle and versioning annotations -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.annotation.bundle</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.annotation.versioning</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- OSGi DS and metatype annotations -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.metatype.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.servlets.annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- wcm.io -->
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.caconfig.extensions</artifactId>
+        <!-- Stick with version 1.8.x because 1.9.x depends on latest Sling Context-Aware Configuration SPI/Impl -->
+        <version>1.8.8</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.caconfig.editor</artifactId>
+        <version>1.15.8</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.sling.models</artifactId>
+        <version>1.6.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.sling.commons</artifactId>
+        <version>1.6.4</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.commons</artifactId>
+        <version>1.5.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.url</artifactId>
+        <version>1.10.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.link</artifactId>
+        <version>1.10.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.15.8</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.richtext</artifactId>
+        <version>1.6.4</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.commons</artifactId>
+        <version>1.10.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.parsys</artifactId>
+        <version>1.7.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.10.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+        <version>1.3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.dam.asset-service</artifactId>
+        <version>1.5.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm.devops.conga.definitions</groupId>
+        <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+        <version>2.0.2</version>
+      </dependency>
+
+      <!-- wcm.io Testing -->
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+        <version>5.4.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
+        <version>1.5.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
+        <version>1.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
+        <version>1.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
+        <version>1.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
+        <version>1.4.0</version>
+      </dependency>
+
+      <!-- Import AEM dependencies -->
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
+        <version>6.5.7.0003</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Testing -->
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.10.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <extensions>
+
+      <!-- Add wcm.io file header to code templates -->
+      <extension>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.global-build-tools-mixin</artifactId>
+        <version>2</version>
+      </extension>
+
+    </extensions>
+    <plugins>
+
+      <!-- Do not generate sites for the sample apps -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+
+    </plugins>
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>biz.aQute.bnd</groupId>
+          <artifactId>bnd-maven-plugin</artifactId>
+          <configuration>
+            <bnd>
+              Bundle-Category: wcm.io
+              Bundle-Vendor: wcm.io
+              Bundle-Name: wcm.io ${project.name}
+            </bnd>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <configuration>
+            <licenseName>apache_v2</licenseName>
+            <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+            <projectName>wcm.io</projectName>
+            <excludes>
+              <exclude>**/*.json</exclude>
+              <exclude>**/*.html</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <!-- profile used for building releases and deployment to sonatype/maven central -->
+    <profile>
+      <id>release-profile</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <!-- sign the build -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <inherited>true</inherited>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- configure staging process at sonatype.-->
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <inherited>true</inherited>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <!-- Deployed artifacts should go to staging to be reviewed before publish -->
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

@@ -1,0 +1,27 @@
+# AEM configuration for local development environment
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: wcm-io-samples-aem-cms
+    variant: aem-author
+  config:
+    replication.author.publishTargets:
+    - name: publish
+      url: ${maven::sling.publish.url}
+      transportUser: admin
+      transportPassword: admin
+
+- node: aem-publish
+  roles:
+  - role: wcm-io-samples-aem-cms
+    variant: aem-publish
+
+config:
+  contentPackage.group: wcm-io-samples
+  app.sampleContent: true
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: info

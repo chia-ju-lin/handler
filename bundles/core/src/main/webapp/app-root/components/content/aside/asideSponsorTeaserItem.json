@@ -1,0 +1,56 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "componentGroup": "Aside",
+  "jcr:title": "Sponsor teaser item",
+
+  "cq:editConfig": {
+    "cq:listeners": {
+      "afteredit": "sampleApp.authoring.listener.refreshAjaxContentAfterEdit"
+    }
+  },
+
+  "wcmio:mediaFormats": ["sponsorTeaser"],
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Sponsor teaser item",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/tabs",
+      "items": {
+        "media": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/include",
+          "path": "wcm-io-samples/core/components/global/include/mediaRefTab"
+        },
+        "mediaDimensions": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+          "jcr:title": "Image dimensions",
+          "items": {
+            "column": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/container",
+              "items": {
+                "imageWidth": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./imageWidth",
+                  "fieldLabel": "Image width (px)",
+                  "required": true
+                },
+                "imageHeight": {
+                  "sling:resourceType": "granite/ui/components/coral/foundation/form/textfield",
+                  "name": "./imageHeight",
+                  "fieldLabel": "Image height (px)",
+                  "required": true
+                }
+              }
+            }
+          }
+        },
+        "link": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/include",
+          "path": "wcm-io-samples/core/components/global/include/linkRefNoTitleTab"
+        }
+      }
+    }
+  }
+
+}

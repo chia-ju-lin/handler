@@ -1,0 +1,17 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+  "jcr:title": "Image",
+  "items": {
+    "column": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/container",
+      "items": {
+        "mediaRef": {
+          "sling:resourceType": "wcm-io/handler/media/components/granite/form/fileupload",
+          "fieldLabel": "Asset reference",
+          "allowUpload": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "sling:resourceSuperType": "wcm-io-samples/core/components/global/page",
+
+  "wcmio:parsysConfig": {
+    "jcr:primaryType": "nt:unstructured",
+    "paths": {
+
+      "content": {
+        "allowedChildren": [
+          "wcm-io-samples/core/components/content/common/contentHeadline",
+          "wcm-io-samples/core/components/content/common/contentRichText",
+          "/libs/core/wcm/components/accordion/v1/accordion",
+          "/libs/core/wcm/components/button/v1/button",
+          "/libs/core/wcm/components/carousel/v1/carousel",
+          "/apps/core/wcm/components/button/v1/button"
+
+
+        ]
+      }
+
+    }
+  }
+
+}
