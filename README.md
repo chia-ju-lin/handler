@@ -12,7 +12,7 @@ Continuous Integration: https://github.com/wcm-io/io.wcm.samples/actions<br/>
 Commercial support: https://wcm.io/commercial-support.html
 
 
-### Build and deploy samples from source
+### Build and deploy samples from source ...
 
 If you want to build wcm.io from sources make sure you have configured all [Maven Repositories](https://wcm.io/maven.html) in your settings.xml.
 
