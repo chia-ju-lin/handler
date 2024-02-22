@@ -73,11 +73,11 @@ public class ResourceMedia {
       ValueMap props = resource.getValueMap();
       int imageWidth = props.get("imageWidth", 0);
       if (imageWidth > 0) {
-        element.setAttribute("width", Integer.toString(imageWidth));
+        element.setAttribute("width", Integer.toString(imageWidth)+10);
       }
       int imageHeight = props.get("imageWidth", 0);
       if (imageHeight > 0) {
-        element.setAttribute("height", Integer.toString(imageHeight));
+        element.setAttribute("height", Integer.toString(imageHeight)+10);
       }
     }
   }

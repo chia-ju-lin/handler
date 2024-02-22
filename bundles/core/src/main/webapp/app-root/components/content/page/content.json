@@ -9,13 +9,7 @@
       "content": {
         "allowedChildren": [
           "wcm-io-samples/core/components/content/common/contentHeadline",
-          "wcm-io-samples/core/components/content/common/contentRichText",
-          "/libs/core/wcm/components/accordion/v1/accordion",
-          "/libs/core/wcm/components/button/v1/button",
-          "/libs/core/wcm/components/carousel/v1/carousel",
-          "/apps/core/wcm/components/button/v1/button"
-
-
+          "wcm-io-samples/core/components/content/common/contentRichText"
         ]
       }
 
